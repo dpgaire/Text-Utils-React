@@ -22,16 +22,17 @@ function NavBar(props,{textBtn}) {
                     <Link className="nav-link" to="/about">{props.aboutText}</Link>
                 </li>
                 </ul>
+                <div className="d-flex">
+                    <div className="bg-primary rounded mx-2" style={{height:'30px',width:'30px',cursor:'pointer'}} onClick={()=>{props.toggle('primary')}}></div>
+                    <div className="bg-warning rounded mx-2" style={{height:'30px',width:'30px',cursor:'pointer'}} onClick={()=>{props.toggle('warning')}}></div>
+                    <div className="bg-danger rounded mx-2" style={{height:'30px',width:'30px',cursor:'pointer'}} onClick={()=>{props.toggle('danger')}}></div>
+                    <div className="bg-info rounded mx-2" style={{height:'30px',width:'30px'}} onClick={()=>{props.toggle('info')}}></div>
+                </div>
                 <div className={`form-check form-switch text-${props.mode==='white'?'dark':'white'}`}>
                     <input className="form-check-input"
-                    type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggle}/>
+                    type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={()=>{props.toggle(null)}}/>
                     <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label>
                 </div>
-                {/* <div className={`form-check form-switch text-${props.gradinatMode==='green'?'yellow':'green'} mx-3`}>
-                    <input className="form-check-input"
-                    type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleGradiant}/>
-                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Gradiant Mode</label>
-                </div> */}
             </div>
             </div>
       </nav>
